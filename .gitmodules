@@ -1,0 +1,3 @@
+[submodule "datasets"]
+	path = datasets
+	url = https://github.com/calista-ai/website-aesthetics-datasets.git
