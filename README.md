@@ -21,6 +21,8 @@ In this repository, we develop deep learning models that can evaluate the aesthe
 
     3.1. [Comparison-based approach I](#comparison-based-approach-i)
 
+4. [Requirements](#requirements)
+
 ## Datasets
 
 For the training process, we rely on 2 different datasets.
@@ -33,12 +35,42 @@ You can find more about these datasets [here](https://github.com/calista-ai/webs
 
 ## Rating-based models
 
+Models trained and evaluated using the **[Rating-based dataset](https://github.com/calista-ai/website-aesthetics-datasets)**.
+
+Evaluation method: Training set (75.4%) - Test set (24.6%)
+
+Results synopsis:
+
+| Rating-based Model | Pearson Correlation Coefficient | RMSE | Accuracy (2 classes) |
+|:------------------:|:-------------------------------:|:----:|:--------------------:|
+| Approach I | 0.78 [0.69, 0.85] | 0.616 | 88.78 % |
+| Approach II | 0.76 [0.66, 0.83] | 0.662 | 84.69 % |
+| Approach III | 0.78 [0.68, 0.85] | 0.628 | 83.67 % |
+
 ### Rating-based approach I
+
+**Description**: In this approach, the model was trained using the mean value of the user ratings for each website. The model's output is an aesthetics score on the scale 1-9.
 
 ### Rating-based approach II
 
+**Description**: In this approach, the model was trained using the distribution of the user ratings for each website expressed as an empirical probability mass function. The model's output is a predicted distribution of the aesthetics scores. The final score is calculated by the mean value of the predicted distribution (scale 1-9).
+
 ### Rating-based approach III
+
+**Description**: In this approach, the model was trained using all the pairs webpage - user rating. The model's output is an aesthetics score on the scale 1-9.
 
 ## Comparison-based models
 
+Models trained and evaluated using the **[Comparison-based dataset](https://github.com/calista-ai/website-aesthetics-datasets)**.
+
+Evaluation method: Leave-one-out Cross Validation
+
+Results synopsis:
+
+| Comparison-based Model | Pearson Correlation Coefficient | RMSE |
+|:----------------------:|:-------------------------------:|:----:|
+| Approach I | 0.70 [0.58, 0.79] | 1.353 |
+
 ### Comparison-based approach I
+
+## Requirements
