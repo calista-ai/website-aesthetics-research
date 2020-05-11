@@ -51,13 +51,19 @@ Results synopsis:
 
 **Description**: In this approach, the model was trained using the mean value of the user ratings for each website. The model's output is an aesthetics score on the scale 1-9.
 
+**Transfer-learning**: [Flickr-Style](/pretrained-models/README.md) was used as a base network
+
 ### Rating-based approach II
 
 **Description**: In this approach, the model was trained using the distribution of the user ratings for each website expressed as an empirical probability mass function. The model's output is a predicted distribution of the aesthetics scores. The final score is calculated by the mean value of the predicted distribution (scale 1-9).
 
+**Transfer-learning**: [NIMA-MobileNet](/pretrained-models/README.md) was used as a base network
+
 ### Rating-based approach III
 
 **Description**: In this approach, the model was trained using all the pairs webpage - user rating. The model's output is an aesthetics score on the scale 1-9.
+
+**Transfer-learning**: [Flickr-Style](/pretrained-models/README.md) was used as a base network
 
 ## Comparison-based models
 
@@ -73,4 +79,16 @@ Results synopsis:
 
 ### Comparison-based approach I
 
+**Description**: The dataset contains an aesthetics score for each website that was calculated using the Bradley-Terry model based on the pairwise comparisons collected by the users. In this approach, the model was trained using the Bradley-Terry ratings. The model's output is an aesthetics score on the scale 1-10.
+
+**Transfer-learning**: [Calista Rating-Based](/pretrained-models/README.md) was used as a base network
+
 ## Requirements
+
+* Step 1: Download the datasets
+
+        git submodule update --init
+
+* Step 2: Download the pretrained models in the folder *pretrained-models/*. Links can be found  [here](/pretrained-models/README.md).
+
+The code was tested using Python 3.6.
